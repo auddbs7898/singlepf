@@ -16,31 +16,32 @@ function ani() {
 } */
 
 var FadeSlide = (function(){
-    function FadeSlide(slides, options){
-        var obj = this;
-      this.slides = slides,
-      this.delay = options.delay,
-      this.speed = options.speed;
-      this.now = 0;
-      this.end = this.slide.length -1;
-      this.depth = 0;
-      this.init(obj);
-    }
-    FadeSlide.prototype.init = function(obj){
-        obj.slide.each(function(){
-            if(obj.depth < $(this).css("z-index")) obj.depth = $(this).css("z-index");
-        });
-        obj.depth++;
-        obj.ani(obj);
-    }
-    FadeSlide.prototype.ani = funtion(obj){
-        var target = obj.slide.eq(obj.now)
-        target.css({"z-index":obj.depth++, "opacity":0});
-        target.delay(3000).animate({"opacity":1}, 1000, function(){
-            if(obj.now == obj.end) now = 0;
-            else obj.now++;
-            ani();
-	});
-    }
-    return FadeSlide;
-}());//객체는 대문자로 만드는게 좋다
+	function FadeSlide(slides, options) {
+		var obj = this;
+		this.slides = slides;
+		this.delay = options.delay;
+		this.speed = options.speed;
+		this.now = 0;
+		this.end = this.slides.length - 1;
+		this.depth = 0;
+		console.log(this.end);
+		this.init(obj);
+	}
+	FadeSlide.prototype.init = function(obj) {
+		obj.slides.each(function(){
+			if(obj.depth < $(this).css("z-index")) obj.depth = $(this).css("z-index");
+		});
+		obj.depth++;
+		obj.ani(obj);
+	}
+	FadeSlide.prototype.ani = function(obj) {
+		var target = obj.slides.eq(obj.now);
+		target.css({"z-index":obj.depth++, "opacity":0});
+		target.delay(obj.delay).animate({"opacity":1}, obj.speed, function(){
+			if(obj.now == obj.end) obj.now = 0;
+			else obj.now++;
+			obj.ani(obj);
+		});
+	}
+	return FadeSlide;
+}());

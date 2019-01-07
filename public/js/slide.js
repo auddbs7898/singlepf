@@ -29,7 +29,8 @@
     return Slide; //new Slide() 호출의 리턴값
 }()); */
 
-/* Slide라는 이름을 가진 객체를 만든다
+/*  Slide 만드는 순서 
+   Slide라는 이름을 가진 객체를 만든다
    Slide객체한테 function을주고 그안에 또 이름이 같은 즉시실행문을 만든다
   객체는 constructor(생성자)가 필요하므로 즉시실행문안에 생성자.prototype을 만들어 즉시실행문을 만든다
   객체한테 다시 반환값을 주기위해 return을 준다 return 값이 없으면 안됀다 */

@@ -83,12 +83,30 @@ $("#bt_top").click(function(){
 mainSlide.setType("ggg");
 log(mainSlide.getType()); */
 
+/*
 var options = {
-  speed: 1000,
-  gap: 3000,
-  direction: "F",
-  type: "horizental",
-  pager: true
+	speed: 3000,
+	gap: 3000,
+	type: "fade",
+	pager: true
 };
+var mainBanner = new Slide($(".banner"), $(".banner_wrap"), $(".slide"), options);
+var options = [{
+	delay: 3000,
+	speed: 1000
+},{
+	delay: 1000,
+	speed: 200
+},{
+	delay: 2000,
+	speed: 100
+}];
+var mainBanner = new FadeSlide($(".banner_wrap").eq(0).find(".slide"), options[0]);
+var mainBanner2 = new FadeSlide($(".banner_wrap").eq(1).find(".slide"), options[1]);
+var mainBanner3 = new FadeSlide($(".banner_wrap").eq(2).find(".slide"), options[2]);
+//접근법
+$(".banner_wrap").eq(0).find(".slide")
+$(".slide", $(".banner_wrap").eq(0))
+*/
 
-var mainBanner = new FadeSlide($(".banner"),{} );
+//new FadeSlide($(".slide"), {delay:3000, speed:1000});
