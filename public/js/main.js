@@ -1,9 +1,10 @@
 /***** 공통사항 변수 선언 ******/
+const log = console.log;
 const mapKey = "f0469ae1e971ab333e7790ef71fc07cd"; /** const는 상수로 항상 유지되는 값이므로 한번 값을 설정한뒤로는 반복설정이나 재설정이 불가능하다 **/
-var bar = $(".navs_mo");
-var bar2 = $(".nav_close");
-var nav = $(".navs_mo_sub");
-var navWid = nav.width();
+var $bar = $(".navs_mo");
+var $bar2 = $(".nav_close");
+var $nav = $(".navs_mo_sub");
+var navWid = $nav.width();
 
 /***** 반응형/높이를 위한 resize ******/
 $(window).resize(function(){
@@ -18,18 +19,18 @@ function banInit() {
 }
 
 /***** 모바일 네비게이션 ******/
-bar.click(navToggle);
-bar2.click(navToggle);
+$bar.click(navToggle);
+$bar2.click(navToggle);
 function navInit() {
-   navWid = nav.width();
+   navWid = $nav.width();
    if($(window).width() > 768) navHide();
 }
 function navHide() {
-   nav.css({"left":-navWid+"px"});
+   $nav.css({"left":-navWid+"px"});
 }
 function navToggle() {
-   if(nav.position().left == 0) nav.stop().animate({"left": -navWid+"px"}, 500);
-   else nav.stop().animate({"left": 0}, 500);
+   if($nav.position().left == 0) $nav.stop().animate({"left": -navWid+"px"}, 500);
+   else $nav.stop().animate({"left": 0}, 500);
 }
 
 /***** masonry *****/
@@ -77,3 +78,17 @@ $(window).resize(function(){
 $("#bt_top").click(function(){
 	$("html, body").stop().animate({"scrollTop":0}, 2000);
 });
+
+/* var mainSlide = new Slide();//Slide라는 속성을가진 새로운 객체생성
+mainSlide.setType("ggg");
+log(mainSlide.getType()); */
+
+var options = {
+  speed: 1000,
+  gap: 3000,
+  direction: "F",
+  type: "horizental",
+  pager: true
+};
+
+var mainBanner = new FadeSlide($(".banner"),{} );
