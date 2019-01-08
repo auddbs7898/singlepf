@@ -101,12 +101,28 @@ var options = [{
 	delay: 2000,
 	speed: 100
 }];
-var mainBanner = new FadeSlide($(".banner_wrap").eq(0).find(".slide"), options[0]);
-var mainBanner2 = new FadeSlide($(".banner_wrap").eq(1).find(".slide"), options[1]);
-var mainBanner3 = new FadeSlide($(".banner_wrap").eq(2).find(".slide"), options[2]);
+var mainBanner = new SlideFade($(".banner_wrap").eq(0).find(".slide"), options[0]);
+var mainBanner2 = new SlideFade($(".banner_wrap").eq(1).find(".slide"), options[1]);
+var mainBanner3 = new SlideFade($(".banner_wrap").eq(2).find(".slide"), options[2]);
 //접근법
 $(".banner_wrap").eq(0).find(".slide")
 $(".slide", $(".banner_wrap").eq(0))
 */
 
-//new FadeSlide($(".slide"), {delay:3000, speed:1000});
+//new SlideFade($(".slide"), {delay:3000, speed:1000});
+
+ var options = {
+	delay: 3000,
+	speed: 300,
+	dir: -1,
+	dirBtnUse: true,
+	dirBtn:[$("#bt_prev"), $("#bt_next")]
+};
+var horiBanner = new SlideHori($("#banner1"), $("#banner1").find(".slide"), options);
+
+
+/*
+$(".banner_wrap").find(".slide")
+$(".banner_wrap").children(".slide")
+$(".slide", $(".banner_wrap"))
+*/
