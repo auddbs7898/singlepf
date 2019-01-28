@@ -110,12 +110,13 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 }
 
 /***** Design PC *****/
-.design {padding:5rem 0; font-size:1rem; background-color:#eee;}
-.design > :first-child {float:left; width:50%; padding:5%;}
-.design h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em;}
+.design {padding:5rem 0; font-size:1rem; background-color:#eee; text-align: center;}
+.design > :first-child{ overflow: hidden;}
+.design > .designpro{ width: 23%; margin:1%;overflow:hidden; border-radius:0.5em; float: left;}
+.design h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1em;}
 .design h5 {line-height:2em; margin-bottom:1.5em;}
-.design > :last-child {float:left; width:40%; margin:5%; overflow:hidden; border-radius:0.5em;}
-.design img {animation-name:sizeDn; animation-duration:1s; animation-fill-mode:forwards;}
+.design button{ margin-bottom: 1em;}
+.design img {animation-name:sizeDn; animation-duration:1s; animation-fill-mode:forwards; margin-bottom: 1em;}
 .design img:hover {animation-name:sizeUp;}
 /***** Design Response *****/
 @media screen and (max-width:480px) {
@@ -124,8 +125,8 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 }
 
 /***** Team PC *****/
-.team {padding:5rem 0; text-align:left;}
-.team h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em; text-align:center;}
+.team {padding:5rem 0 8rem 0; text-align:left;}
+.team h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1em; text-align:center;}
 .team h5 {line-height:2em; margin-bottom:1.5em; text-align:center;}
 .team > ul {max-width:1200px; margin:auto;}
 .member {width:24%; margin:.5%; float:left; box-shadow:0 0 5px rgba(0,0,0,.3);}
@@ -134,10 +135,11 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 .member > ul > li:first-child > img {animation-name:sizeDn; animation-duration:1s; animation-fill-mode:forwards;}
 .member > ul > li:first-child > img:hover {animation-name:sizeUp;} 
 .member > ul > li:not(:first-child) {padding:1rem;}
-.member > ul > li:nth-child(2) {font-size:1.75em;}
+.member > ul > li:nth-child(2) {font-size:1.25em; line-height: 150%;}
 .member > ul > li:nth-child(3) {font-size:1.125em; color:#666;}
 .member > ul > li:nth-child(4) {line-height:2em;}
 .member > ul > li:nth-child(5) > button {width:100%;}
+.team button{ position: absolute; left: 50%; transform: translateX(-50%); margin-top: 3rem;}
 /***** Team Response *****/
 @media screen and (max-width:768px) {
 	.member {width:48%; margin:1%;}
@@ -228,7 +230,7 @@ header {width:100%; position:fixed; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-s
 
 /***** Contact PC *****/
 .contacts {padding:5rem 0; background-color:#f1f1f1;}
-.contacts > h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em; text-align:center;}
+.contacts > h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1em; text-align:center;}
 .contacts > h5 {line-height:2em; margin-bottom:3em; text-align:center;}
 .contacts > ul {width:96%; max-width:1200px; margin:auto;}
 .contacts > ul > li {width:50%; float:left;}

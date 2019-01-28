@@ -11,3 +11,4 @@ div, ul, li, p, h1, h2, h3, h4, h5 {margin: 0; padding: 0; box-sizing: border-bo
 .hand {cursor:pointer;}
 .fl{ float: left;}
 .fr{ float: right;}
+.color-o{ color: orange; font-style: inherit;}

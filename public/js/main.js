@@ -46,12 +46,12 @@ $('.grid').imagesLoaded( function() {
 $(window).resize(function(){
 	var container = document.getElementById('map');
 	var options = {
-		center: new daum.maps.LatLng(37.572070, 126.987287), //지도의 중심좌표.
-		level: 3 //지도의 레벨(확대, 축소 정도)
+		center: new daum.maps.LatLng(37.4625, 126.439167), //지도의 중심좌표.
+		level: 7 //지도의 레벨(확대, 축소 정도)
 	};
 	var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
-	map.setDraggable(false);
-	map.setZoomable(false);
+	/* map.setDraggable(false);
+	map.setZoomable(false); */
 	
 	var clusterer = new daum.maps.MarkerClusterer({
 		map: map,
@@ -68,7 +68,7 @@ $(window).resize(function(){
 		}]
 	});
 	var marker = new daum.maps.Marker({
-		position: new daum.maps.LatLng(37.572070, 126.987287)
+		position: new daum.maps.LatLng(37.4625, 126.439167)
 	});
 	clusterer.addMarker(marker);
 }).trigger("resize");
